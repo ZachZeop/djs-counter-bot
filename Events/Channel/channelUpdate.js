@@ -10,7 +10,8 @@ module.exports = {
     async execute(oldChannel, newChannel) {
         if (oldChannel.name !== newChannel.name) {
             const counter = await DB.findOne({ GuildID: oldChannel.guild.id, Channel: oldChannel.id }).clone();
-            if (counter) if (newChannel.name.split(':').length > 2) await newChannel.setName(oldChannel.name); // Ensures no additional colons are added to counter channels' names
+            if (counter) if (newChannel.name.split(':').length > 2) await newChannel.setName(oldChannel.name);
+// Ensures no additional colons are added to counter channels' names
         }
     }
 }
