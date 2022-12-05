@@ -5,7 +5,8 @@ const DB = require("./Schemas/CounterSetup");
  *
  * @param {Client} client
  */
-module.exports = async (client) => {
+module.exports = async (client) => 
+// client comes from the ready event
   cron.schedule('*/15 * * * *', async () => { // Every 15mins
     client.guilds.cache.forEach(async (guild) => await guild.members.fetch()); // Need to fetch all guild members beforehand
     await DB.find({}).then(async (channels) => {
