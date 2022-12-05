@@ -1,11 +1,11 @@
 const { Client, Collection, GatewayIntentBits, Partials } = require("discord.js");
-const { Guilds, GuildMembers } = GatewayIntentBits;
+const { Guilds } = GatewayIntentBits;
 const { Channel } = Partials;
 const ms = require("ms");
 
 const client = new Client({
   partials: [Channel],
-  intents: [Guilds, GuildMembers],
+  intents: [Guilds],
   allowedMentions: { parse: ["everyone", 'users', 'roles'] },
   rest: { timeout: ms("1m") }
 }).setMaxListeners(0);
