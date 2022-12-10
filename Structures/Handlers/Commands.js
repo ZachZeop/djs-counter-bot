@@ -1,6 +1,5 @@
 const { Perms } = require("../../Validation/Permissions")
 const { Client } = require("discord.js")
-const ms = require("ms")
 
 /**
  * @param { Client } client
