@@ -34,18 +34,5 @@ module.exports = async (client, PG, Ascii) => {
 
     console.log(Table.toString())
 
-    client.on("ready", () => {
-
-        setInterval(() => {
-
-            client.guilds.cache.forEach(guild => {
-
-                guild.commands.set(CommandsArray).catch(console.error);
-
-            })
-
-        }, ms("5s"))
-
-    })
 
 }
